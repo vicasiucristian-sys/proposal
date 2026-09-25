@@ -1,0 +1,1123 @@
+<title>Fiverr Gig Trailer</title>
+<meta name="description" content="Research, script and shot list for the gig video of an AI video ads and AI UGC gig on Fiverr, plus the gig setup and a 30-day launch plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400..600&display=swap">
+<style>
+:root{
+  --bg:#F2F4F7;
+  --surface:#FFFFFF;
+  --surface-2:#E9EDF3;
+  --line:#D6DCE5;
+  --line-strong:#B4BDCA;
+  --ink:#10151F;
+  --ink-2:#343D4D;
+  --muted:#5A6475;
+  --accent:#1C5CAB;
+  --accent-ink:#FFFFFF;
+  --accent-soft:#E3EDFB;
+  --good:#00703A;
+  --good-soft:#E2F3E9;
+  --warn:#875600;
+  --warn-soft:#FBF0D6;
+  --bad:#B02E2E;
+  --bad-soft:#FBE5E3;
+  --viz-grid:#E3E7EE;
+  --dot-ctx:#8792A2;
+  --dot-me:#2a78d6;
+  --band:#F3F5F8;
+  --hot-ink:#FFFFFF;
+  --f-display:"Archivo","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+  --f-ui:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --f-body:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --r:10px;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#0C1016;--surface:#151A22;--surface-2:#1C232D;--line:#28303C;--line-strong:#3B4553;
+    --ink:#E9EDF3;--ink-2:#C9D0DB;--muted:#9AA4B4;
+    --accent:#86B6EF;--accent-ink:#0C1016;--accent-soft:#17263C;
+    --good:#56CF92;--good-soft:#10291D;--warn:#EBB65C;--warn-soft:#2A2110;--bad:#FF8D84;--bad-soft:#321A19;
+    --viz-grid:#232A35;--dot-ctx:#5E6878;--dot-me:#3987e5;--band:#19202A;--hot-ink:#0C1016;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0C1016;--surface:#151A22;--surface-2:#1C232D;--line:#28303C;--line-strong:#3B4553;
+  --ink:#E9EDF3;--ink-2:#C9D0DB;--muted:#9AA4B4;
+  --accent:#86B6EF;--accent-ink:#0C1016;--accent-soft:#17263C;
+  --good:#56CF92;--good-soft:#10291D;--warn:#EBB65C;--warn-soft:#2A2110;--bad:#FF8D84;--bad-soft:#321A19;
+  --viz-grid:#232A35;--dot-ctx:#5E6878;--dot-me:#3987e5;--band:#19202A;--hot-ink:#0C1016;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:2px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+p{margin:0}
+ul,ol{margin:0;padding-left:1.25em}
+li+li{margin-top:6px}
+.wrap{max-width:1080px;margin-inline:auto;padding-inline:20px}
+@media (max-width:480px){.wrap{padding-inline:16px}}
+
+/* header */
+.clap{height:12px;background-color:var(--bg);background-image:repeating-linear-gradient(-45deg,var(--ink) 0 12px,transparent 12px 24px)}
+.top{padding-block:28px 44px;display:grid;gap:26px}
+.slate{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line-strong);border-radius:6px;background:var(--surface);overflow:hidden}
+.slate > div{padding:10px 14px;border-left:1px solid var(--line);display:grid;gap:3px;min-width:0}
+.slate > div:first-child{border-left:0}
+.slate .k{font:500 10.5px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.slate .v{font:500 13.5px/1.35 var(--f-mono);color:var(--ink)}
+@media (max-width:760px){
+  .slate{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .slate > div:nth-child(3){border-left:0}
+  .slate > div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+h1{font-family:var(--f-display);font-stretch:72%;font-weight:800;font-size:clamp(38px,6.6vw,70px);line-height:.98;letter-spacing:-.01em;margin:0;text-wrap:balance;max-width:19ch}
+.lede{font-family:var(--f-body);font-size:clamp(18px,1.2vw + 13px,21px);line-height:1.55;color:var(--ink-2);max-width:62ch}
+.tiles{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+@media (min-width:560px){.tiles{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:960px){.tiles{grid-template-columns:repeat(4,1fr)}}
+.tile{background:var(--surface);padding:16px 18px 18px;display:grid;gap:6px;align-content:start}
+.tile .lbl{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.tile .val{font-weight:650;font-size:clamp(28px,3vw,33px);line-height:1.1;letter-spacing:-.01em;color:var(--ink)}
+.tile .sub{font-size:13px;line-height:1.4;color:var(--muted)}
+
+/* nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-block:1px solid var(--line)}
+@supports (backdrop-filter:blur(8px)) or (-webkit-backdrop-filter:blur(8px)){.nav{background:color-mix(in srgb,var(--bg) 88%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}}
+.nav ol{list-style:none;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;padding-block:7px}
+.nav ol::-webkit-scrollbar{display:none}
+.nav li{margin:0}
+.nav a{display:block;white-space:nowrap;font:500 12.5px/1 var(--f-mono);color:var(--muted);text-decoration:none;padding:9px 10px;border-radius:999px}
+.nav a:hover{color:var(--ink);background:var(--surface-2)}
+
+/* sections */
+main section{padding-block:56px;border-top:1px solid var(--line);scroll-margin-top:calc(env(safe-area-inset-top,0px) + 50px)}
+main section:first-child{border-top:0}
+.head{display:grid;gap:10px;margin-bottom:26px;max-width:780px}
+.head p:not(.q){font-family:var(--f-body);font-size:17.5px;line-height:1.6;color:var(--ink-2);max-width:68ch}
+.q{font:500 12px/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+h2{font-family:var(--f-display);font-stretch:76%;font-weight:760;font-size:clamp(29px,4.4vw,43px);line-height:1.04;letter-spacing:-.005em;margin:0;text-wrap:balance}
+h3{font-family:var(--f-ui);font-weight:700;font-size:18.5px;line-height:1.3;margin:0;text-wrap:balance}
+.stack{display:grid;gap:18px}
+.stack-lg{display:grid;gap:40px}
+.prose{display:grid;gap:14px;max-width:68ch}
+.prose p,.prose li{font-family:var(--f-body);font-size:17.5px;line-height:1.62;color:var(--ink-2)}
+.prose strong{color:var(--ink);font-weight:600}
+@media (max-width:480px){.prose p,.prose li,.head p:not(.q){font-size:17px}}
+.small{font-size:13.5px;line-height:1.5;color:var(--muted)}
+.label{font:500 11px/1.2 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+.keys{list-style:none;padding:0;border-top:1px solid var(--line)}
+.keys li{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:6px 28px;padding-block:16px;border-bottom:1px solid var(--line);margin:0}
+.keys b{font-weight:700;font-size:17px;line-height:1.35}
+.keys p{font-family:var(--f-body);font-size:17px;line-height:1.6;color:var(--ink-2)}
+@media (max-width:720px){.keys li{grid-template-columns:1fr}}
+
+.box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:10px}
+.box.tint{background:var(--accent-soft);border-color:transparent}
+.box ul,.box ol{font-size:15px;line-height:1.55;color:var(--ink-2)}
+.box p{font-size:15px;line-height:1.55;color:var(--ink-2)}
+.box b{color:var(--ink)}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--r);background:var(--surface);-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:14.5px;line-height:1.45}
+.tbl.wide table{min-width:720px}
+.tbl.xwide table{min-width:880px}
+caption{caption-side:top;text-align:left;padding:12px 14px 2px;font-size:13px;line-height:1.45;color:var(--muted)}
+th,td{padding:11px 14px;text-align:left;vertical-align:top}
+thead th{font:500 11px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+tbody tr + tr > *{border-top:1px solid var(--line)}
+tbody th{font-weight:600;color:var(--ink)}
+td{color:var(--ink-2)}
+.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.me > *{background:var(--accent-soft);color:var(--ink)}
+tr.pick > *{background:var(--accent-soft)}
+tr.pick th{color:var(--ink)}
+td.tc,th.tc{font:600 12.5px/1.45 var(--f-mono);color:var(--ink);white-space:nowrap}
+td.tc span{display:block;font-weight:500;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-top:2px}
+td .onscreen{font-weight:650;color:var(--ink)}
+td .say-line{font-family:var(--f-body);font-size:15.5px;color:var(--ink)}
+td .cue{font:500 11.5px/1.4 var(--f-mono);color:var(--muted)}
+td small{display:block;margin-top:4px;font-size:12.5px;line-height:1.45;color:var(--muted)}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 11.5px/1 var(--f-mono);padding:5px 7px;border:1px solid var(--line-strong);border-radius:4px;color:var(--ink-2);background:var(--surface)}
+
+/* timeline bar of the trailer */
+.tlbar{display:grid;gap:8px}
+.tlbar .note{display:flex;align-items:center;gap:8px;font:500 11.5px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.tlbar .note i{display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--dot-me)}
+.bar{display:flex;gap:2px;height:46px;border-radius:6px;overflow:hidden;background:var(--surface)}
+.bar > span{display:flex;align-items:center;justify-content:center;min-width:0;background:var(--surface-2);color:var(--ink-2);font:600 12px/1 var(--f-mono)}
+.bar > span.hot{background:var(--dot-me);color:var(--hot-ink)}
+.bar b{font-weight:600;white-space:nowrap}
+@media (max-width:760px){.bar b{display:none}}
+.ticks{position:relative;height:18px}
+.ticks span{position:absolute;top:2px;transform:translateX(-50%);font:500 11.5px/1 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+.ticks span:first-child{transform:none}
+.ticks span:last-child{transform:translateX(-100%)}
+ol.beats{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:4px}
+ol.beats li{margin:0;font-size:14px;color:var(--ink-2)}
+ol.beats b{font:600 12.5px/1 var(--f-mono);color:var(--ink);margin-right:5px;font-variant-numeric:tabular-nums}
+
+/* copy blocks */
+.copy{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.copy .hdr{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;font:500 12.5px/1.4 var(--f-mono);padding:8px 10px 8px 16px;border-bottom:1px solid var(--line);background:var(--surface-2);color:var(--ink-2)}
+.copy pre{margin:0;padding:16px;white-space:pre-wrap;word-break:break-word;font:400 15px/1.65 var(--f-body);color:var(--ink)}
+.btn{font:600 13px/1 var(--f-ui);padding:9px 12px;border-radius:999px;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);cursor:pointer}
+.btn:hover{border-color:var(--ink)}
+
+/* rows */
+dl.rows{display:grid;grid-template-columns:minmax(0,12rem) minmax(0,1fr);margin:0;border-top:1px solid var(--line)}
+dl.rows dt,dl.rows dd{padding-block:12px;border-bottom:1px solid var(--line);margin:0;font-size:15px;line-height:1.5}
+dl.rows dt{font-weight:700;padding-right:16px;color:var(--ink)}
+dl.rows dd{color:var(--ink-2)}
+dl.rows code{font:500 13.5px/1.5 var(--f-mono);color:var(--ink);background:var(--surface-2);padding:1px 5px;border-radius:4px}
+@media (max-width:600px){dl.rows{grid-template-columns:1fr} dl.rows dt{border-bottom:0;padding-bottom:2px} dl.rows dd{padding-top:0}}
+.two{display:grid;grid-template-columns:1fr;gap:28px}
+@media (min-width:900px){.two{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* tiers */
+.tiers{display:grid;grid-template-columns:1fr;gap:16px}
+@media (min-width:900px){.tiers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.tier{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 18px 18px;display:flex;flex-direction:column;gap:14px}
+.tier.pick{border:2px solid var(--accent);padding:21px 17px 17px}
+.pill{position:absolute;top:-12px;left:16px;font:600 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:var(--accent-ink);padding:6px 9px;border-radius:999px}
+.tier h3{font-family:var(--f-display);font-stretch:80%;font-size:25px;font-weight:760;line-height:1.1}
+.fit{font-size:13.5px;line-height:1.4;color:var(--muted)}
+.price{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 8px}
+.price .amt{font-weight:700;font-size:34px;line-height:1;letter-spacing:-.015em;color:var(--ink)}
+.price .per{font-size:14px;color:var(--muted)}
+.tier ul{list-style:none;padding:0;display:grid;gap:8px;font-size:14.5px;line-height:1.45;color:var(--ink-2)}
+.tier li{margin:0;padding-left:16px;position:relative}
+.tier li::before{content:"";position:absolute;left:1px;top:.58em;width:6px;height:6px;border-radius:2px;background:var(--line-strong)}
+.inside{margin-top:auto;border-top:1px solid var(--line);padding-top:12px;display:grid;gap:4px}
+.inside p{font:500 12.5px/1.45 var(--f-mono);color:var(--ink-2)}
+
+/* do / don't, launch timeline, steps */
+.dd{display:grid;grid-template-columns:1fr;gap:14px}
+@media (min-width:760px){.dd{grid-template-columns:1fr 1fr}}
+.dd .col{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 20px;display:grid;gap:12px;align-content:start}
+.dd h3{display:flex;align-items:center;gap:10px;font-size:16.5px}
+.mark{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font:700 13px/1 var(--f-ui);flex:none}
+.mark.ok{background:var(--good-soft);color:var(--good)}
+.mark.no{background:var(--bad-soft);color:var(--bad)}
+.dd ul{list-style:none;padding:0;display:grid;gap:10px;font-size:15px;line-height:1.5;color:var(--ink-2)}
+.dd li{margin:0}
+.tl{list-style:none;padding:0;margin-left:6px;border-left:2px solid var(--line-strong)}
+.tl li{position:relative;display:grid;grid-template-columns:minmax(0,9rem) minmax(0,1fr);gap:2px 18px;padding:0 0 18px 20px;margin:0}
+.tl li:last-child{padding-bottom:2px}
+.tl li::before{content:"";position:absolute;left:-8px;top:5px;width:14px;height:14px;border-radius:50%;background:var(--surface);border:2px solid var(--accent)}
+.tl .when{font:600 13px/1.5 var(--f-mono);color:var(--ink)}
+.tl p{font-size:15px;line-height:1.5;color:var(--ink-2)}
+@media (max-width:600px){.tl li{grid-template-columns:1fr}}
+ol.steps{list-style:none;padding:0;counter-reset:s;border-top:1px solid var(--line)}
+ol.steps > li{counter-increment:s;display:grid;grid-template-columns:2.4rem minmax(0,1fr);gap:4px 10px;padding-block:13px;border-bottom:1px solid var(--line);margin:0;font-size:15.5px;line-height:1.55;color:var(--ink-2)}
+ol.steps > li::before{content:counter(s,decimal-leading-zero);font:600 13px/1.75 var(--f-mono);color:var(--accent)}
+ol.steps b{color:var(--ink)}
+.faq{display:grid;gap:0;border-top:1px solid var(--line)}
+.faq div{padding-block:13px;border-bottom:1px solid var(--line);display:grid;gap:4px}
+.faq b{font-size:15.5px;color:var(--ink)}
+.faq p{font-size:15px;line-height:1.55;color:var(--ink-2)}
+
+/* price strip chart */
+.strip{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px 18px 12px;display:grid;gap:8px}
+.strip-cap{display:grid;gap:2px;margin-bottom:6px}
+.strip-cap b{font-size:15.5px;color:var(--ink)}
+.strip-cap span{font-size:13px;color:var(--muted)}
+.srow{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);align-items:center;gap:2px 16px}
+.slab{display:grid;gap:2px;font-size:14px;line-height:1.35;color:var(--ink-2)}
+.slab.you{color:var(--ink);font-weight:650}
+.slab small{font:500 11.5px/1.3 var(--f-mono);font-weight:500;color:var(--muted)}
+.strack{position:relative;height:64px}
+.strack.short{height:40px}
+.strack.lab{height:52px}
+.sgrid{position:absolute;top:0;bottom:0;width:1px;background:var(--viz-grid)}
+.sband{position:absolute;top:0;bottom:0;background:var(--band);border-radius:4px}
+.band-lab{position:absolute;top:3px;transform:translateX(-50%);font:500 11px/1.2 var(--f-mono);color:var(--muted);white-space:nowrap}
+.dot{position:absolute;width:24px;height:24px;margin:-12px 0 0 -12px;border-radius:50%;outline-offset:0}
+.dot::before{content:"";position:absolute;left:7px;top:7px;width:10px;height:10px;border-radius:50%;background:var(--dot-ctx);box-shadow:0 0 0 2px var(--surface);transition:transform .12s ease}
+.dot.me::before{left:6px;top:6px;width:12px;height:12px;background:var(--dot-me)}
+.dot:hover::before,.dot:focus-visible::before{transform:scale(1.3)}
+@media (prefers-reduced-motion: reduce){.dot::before{transition:none}}
+.dlab{position:absolute;transform:translate(-50%,-100%);font:600 11.5px/1.2 var(--f-ui);color:var(--ink);white-space:nowrap;pointer-events:none}
+.dlab.below{transform:translate(-50%,0);font-weight:500;color:var(--muted)}
+.saxis{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:16px}
+.sticks{position:relative;height:20px;border-top:1px solid var(--line)}
+.sticks span{position:absolute;top:5px;transform:translateX(-50%);font:500 11.5px/1 var(--f-mono);color:var(--muted);font-variant-numeric:tabular-nums}
+@media (max-width:640px){
+  .srow{grid-template-columns:1fr;padding-block:4px}
+  .saxis{grid-template-columns:1fr;gap:0}
+  .saxis > :first-child{display:none}
+  .sticks span:nth-child(even){display:none}
+  .dlab.me{display:none}
+}
+.tip{position:fixed;z-index:60;pointer-events:none;max-width:280px;background:var(--ink);color:var(--bg);font:500 12.5px/1.45 var(--f-ui);padding:8px 10px;border-radius:6px;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+details.tv{margin-top:6px}
+details.tv summary{cursor:pointer;font:600 13.5px/1.4 var(--f-ui);color:var(--accent);padding-block:6px}
+details.tv .tbl{margin-top:8px;max-height:420px;overflow:auto}
+
+/* sources, footer */
+.sources{columns:2 320px;column-gap:36px}
+.srcgrp{break-inside:avoid;margin-bottom:24px;display:grid;gap:8px}
+.srcgrp h3{font:600 11.5px/1.3 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.srcgrp ul{list-style:none;padding:0;display:grid;gap:6px;font-size:13.5px;line-height:1.45;color:var(--ink-2)}
+.srcgrp li{margin:0;overflow-wrap:anywhere}
+footer{padding-block:32px 56px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px;line-height:1.55}
+footer p{max-width:80ch}
+</style>
+
+<div class="clap" aria-hidden="true"></div>
+
+<header class="wrap top">
+  <div class="slate" aria-label="Report details">
+    <div><span class="k">Project</span><span class="v">Fiverr gig trailer</span></div>
+    <div><span class="k">Gig</span><span class="v">AI video ads · AI UGC · D2C</span></div>
+    <div><span class="k">Date</span><span class="v">25 Sep 2026</span></div>
+    <div><span class="k">Builds on</span><span class="v"><a href="https://claude.ai/artifact/HBpwjmfGgm4bqETPjS9Yo9">D2C AI Video Studio</a></span></div>
+  </div>
+  <h1>Make your gig video a 60-second ad for your own service</h1>
+  <p class="lede">On Fiverr your video is also your cover image in search, and it starts without sound. Buyers compare you with thousands of AI UGC gigs, most priced at $5–60, with reels that look alike. So open on one ad-grade shot, show your range for twelve seconds, then show what the cheap gigs can't: scripts, the real product, hooks to test, real results and a real director.</p>
+  <div class="tiles">
+    <div class="tile"><span class="lbl">Longest gig video Fiverr accepts</span><span class="val">75 s</span><span class="sub">Landscape, MP4, under 50 MB. The frame you pick becomes your cover in search.</span></div>
+    <div class="tile"><span class="lbl">Growth in Fiverr searches for "AI UGC video ads"</span><span class="val">+265%</span><span class="sub">Over six months, per Fiverr's Business Trends Index of Dec 2025</span></div>
+    <div class="tile"><span class="lbl">Median starting price of 26 AI UGC and AI ad gigs</span><span class="val">$22.50</span><span class="sub">24 of them start at $70 or less. The next one starts at $165.</span></div>
+    <div class="tile"><span class="lbl">US adults who call AI people in ads unacceptable, even when labelled</span><span class="val">62%</span><span class="sub">Gallup, May 2026. Say it's AI, and show a real person.</span></div>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Sections">
+  <ol class="wrap">
+    <li><a href="#answer">Answer</a></li>
+    <li><a href="#rules">Fiverr rules</a></li>
+    <li><a href="#buyers">Buyers</a></li>
+    <li><a href="#market">Market</a></li>
+    <li><a href="#script">Script</a></li>
+    <li><a href="#shots">Shots</a></li>
+    <li><a href="#edit">Edit</a></li>
+    <li><a href="#gig">Gig page</a></li>
+    <li><a href="#launch">Launch</a></li>
+    <li><a href="#sources">Sources</a></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+
+<!-- ===================== ANSWER ===================== -->
+<section id="answer">
+  <div class="head">
+    <p class="q">The short answer</p>
+    <h2>Cut a 60-second ad: hook, reel, problem, fix, proof and your face</h2>
+    <p>A showreel proves taste. A buyer also needs to see what they get, why you, and that a real person stands behind the work. The cut below covers all of that in a minute, and its first three seconds still work as a silent cover image.</p>
+  </div>
+  <div class="stack-lg">
+    <ul class="keys">
+      <li><b>Open on one ad-grade shot, with text from the first frame</b><p>The frame you choose becomes your cover in search, and sellers report that gig videos autoplay there. Browsers only autoplay without sound, so the hook has to work with the sound off.</p></li>
+      <li><b>Say it's AI in the hook</b><p>"None of these ads were filmed" makes AI the idea. A University of Mississippi study (Aug 2026) found audiences accept AI ads more when AI is part of the idea than when it looks like a way to save money. The line is also your disclosure.</p></li>
+      <li><b>Show products the way Fiverr buyers sell them</b><p>Home, pet, food and drink, accessories and beauty mood shots, as UGC demos, podcast ads, unboxings and product films. AI does best on product-focused ads (Ipsos and Syracuse, 2026). Keep the Velrun films for the proof beat.</p></li>
+      <li><b>Name the three ways cheap AI ads fail</b><p>Buyers already fear ads that look fake, get the product wrong, or repeat one idea. Show all three in eight seconds, then show how you avoid them. That is the line between you and a $10 gig.</p></li>
+      <li><b>Sell a testing system</b><p>One product, nine hooks, scripts included. Meta groups look-alike ads together, and about 6% of ads take most of the spend (Motion, 2026). Brands need different ideas to test, and a single polished video doesn't give them that.</p></li>
+      <li><b>Use your real numbers</b><p>3.7 million views across two Fresh Forest spots is proof no $10 gig has. Fiverr requires the client's permission to show their work, so get it in writing, and do the same for Boston Dynamics before you name them.</p></li>
+      <li><b>End on your face</b><p>Five to eight seconds of you, on camera, in your own voice. Fiverr recommends your own voice, a large clear human face was a key trust cue in a 500-million-impression study, and it answers the 62% who distrust AI people.</p></li>
+      <li><b>Ask for one easy thing</b><p>"Send me your product link and I'll reply with three ad ideas." Sending a link is easier than choosing a package, and a fast, useful reply turns the message into an order.</p></li>
+      <li><b>Fix the rest of the gig too</b><p>The video converts visits. The title, cover frame, starting price, packages and reply speed decide how many visits you get. See <a href="#gig">Gig page</a> and <a href="#launch">Launch</a>.</p></li>
+    </ul>
+
+    <div class="stack">
+      <h3>Showreel, explainer or ad?</h3>
+      <div class="tbl wide"><table>
+        <thead><tr><th>Format</th><th>Good at</th><th>Where it loses buyers</th><th>Use it for</th></tr></thead>
+        <tbody>
+          <tr><th>Pure showreel<br><span class="small">music and montage</span></th><td>Shows range and taste fast. Works without sound.</td><td>Doesn't say what they get or why you. Most AI reels on Fiverr look alike, and nobody is behind them.</td><td>The first twelve seconds of the trailer, and your website hero</td></tr>
+          <tr><th>Talking-head explainer</th><td>Builds trust and explains the offer.</td><td>Nothing striking in the first three seconds, which are your silent cover.</td><td>Fiverr's profile intro video, once you have a seller level</td></tr>
+          <tr><th>Motion-graphics walkthrough<br><span class="small">SaaS explainer style</span></th><td>Answers the questions that stop a first order: what to send, how long, revisions, rights.</td><td>On its own it shows none of the ads you sell, and UI text made with AI video models comes out broken.</td><td>The middle of Cut D, and a 90-second version you attach to replies</td></tr>
+          <tr class="pick"><th>Ad-style trailer<br><span class="small">recommended</span></th><td>Silent hook, proof of realism, the offer, results and a person, in 60 seconds.</td><td>Takes more editing than the other formats.</td><td>The gig video</td></tr>
+        </tbody>
+      </table></div>
+      <div class="box tint">
+        <p><b>Launching with no reviews?</b> Use <a href="#cut-d">Cut D</a>. It keeps the hook and the reel, then walks the buyer through an order in motion graphics and answers four common questions before they ask. Test the 60-second master once five reviews carry the trust.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RULES ===================== -->
+<section id="rules">
+  <div class="head">
+    <p class="q">Fiverr's rules</p>
+    <h2>What Fiverr allows, and what it means for the edit</h2>
+    <p>From Fiverr's Help Center and community pages, read through search results on 25 Sep 2026. Rows marked "reported" come from sellers, not from Fiverr.</p>
+  </div>
+  <div class="stack">
+    <div class="tbl xwide"><table>
+      <thead><tr><th>Topic</th><th>The rule</th><th>What to do</th></tr></thead>
+      <tbody>
+        <tr><th>Length</th><td>75 seconds at most. No minimum.</td><td>Cut a 60-second master and a 45-second test cut.</td></tr>
+        <tr><th>File</th><td>MP4 or AVI, under 50 MB, landscape orientation.</td><td>1920 × 1080, H.264. Show your 9:16 ads as vertical panels inside the frame.</td></tr>
+        <tr><th>Sound</th><td>Audio is required in Video &amp; Animation gig videos, except logo animation, character modeling and visual effects. Fiverr suggests your own voice. A computer voice must sound natural.</td><td>Your voice-over plus licensed music. The AI presenter's one line is the only synthetic voice.</td></tr>
+        <tr><th>Cover image</th><td>After approval you pause on any frame and click "Set as preview". It becomes the gig's cover in search, within 24 hours.</td><td>Design the first second as a still: hero shot plus the hook line. Pick that frame.</td></tr>
+        <tr><th>Autoplay</th><td>Reported: gig videos autoplay in search results instead of showing a still.</td><td>Make the first three seconds work with the sound off.</td></tr>
+        <tr><th>Review</th><td>A new or replaced video stays pending for a few business days. The gig stays live meanwhile.</td><td>You can test a second cut, but each swap costs a few days.</td></tr>
+        <tr><th>Permissions</th><td>You need permission for every image, video and audio file, and the client's permission to show past client work.</td><td>Licensed music, written client permission, and invented brands for spec ads.</td></tr>
+        <tr><th>Contact details</th><td>No emails, links, handles or QR codes. Steering buyers off Fiverr can get the gig removed, and repeat cases the account.</td><td>Leave velrunstudio.com and your socials out of the video, images and PDFs.</td></tr>
+        <tr><th>Own work</th><td>Media must be your own work. Stock footage or copied work counts as misleading.</td><td>Generate every shot yourself.</td></tr>
+        <tr><th>AI</th><td>AI is allowed in every category. UGC gigs should say what is AI and which tools you use, and confirm avatar and voice licenses. No deepfakes, no real person's likeness or celebrity voice without consent. A buyer's request for no AI must be honoured.</td><td>Tag AI presenters on screen, list your tools in the FAQ, use licensed avatars only.</td></tr>
+        <tr><th>Gallery</th><td>One video, up to three images and two PDFs. At least one image.</td><td>Use the PDFs for a sample script and your AI and rights policy.</td></tr>
+        <tr><th>Profile intro video</th><td>Only for freelancers with a level. 20–60 seconds, at least 720p, in English or with English subtitles. You on camera, speaking, no other people, no Fiverr badges.</td><td>Record it once you reach Level 1. The script is in the <a href="#script">Script</a> section.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="box tint">
+      <p><b>How much does a gig video add?</b> Fiverr's Help Center only says gigs with videos "perform better". A May 2026 post on Fiverr's community blog says "up to 40% more likely to convert", with no method given. The popular "220% more sales" figure dates from 2015 and 2016, so don't repeat it. In Video &amp; Animation the video is required anyway, so the real question is how good it is.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BUYERS ===================== -->
+<section id="buyers">
+  <div class="head">
+    <p class="q">Buyers</p>
+    <h2>What a D2C buyer checks before messaging you</h2>
+    <p>Each beat of the script answers one of these questions. Times refer to the master cut.</p>
+  </div>
+  <div class="stack-lg">
+    <div class="tbl xwide"><table>
+      <thead><tr><th>The buyer's question</th><th>What the research says</th><th>Where the trailer answers</th></tr></thead>
+      <tbody>
+        <tr><th>Will it look fake?</th><td>Competitors' own copy shows the fear: "most AI UGC ads look like AI which is why they don't convert". In a Taboola study of 500M+ impressions, AI ads that didn't look like AI did best.</td><td class="tc">0:03 presenter close-up<br>0:17 the three failures</td></tr>
+        <tr><th>Will my product look like my product?</th><td>Labels, logos and hands are where AI still slips. The dependable fix is the real packshot laid over the generated scene.</td><td class="tc">0:25 packshot beside the frame</td></tr>
+        <tr><th>Do they understand ads, or only video?</th><td>Buyer guides tell brands to ask for the "iteration story", what happened after a winning ad. Top Meta accounts ship about 31 ads a week, and about 6% of ads take most of the spend (Motion, 2026).</td><td class="tc">0:25 script, storyboard, 9 hooks</td></tr>
+        <tr><th>How fast, in which sizes?</th><td>Human UGC averages about $198 a video, plus 30–50% for ad rights, and takes 7–31 days depending on the platform.</td><td class="tc">0:25 sizes and languages<br>0:46 three steps</td></tr>
+        <tr><th>Can I trust them?</th><td>A large, clear human face was a key trust cue in ads (Taboola, 2026). Buyers want results they can check.</td><td class="tc">0:38 3.7M views<br>0:52 you on camera</td></tr>
+        <tr><th>Will this get me in trouble?</th><td>The FTC bans testimonials from people who don't exist, AI ones included. New York has required disclosure of AI "synthetic performers" in ads since 9 Jun 2026. TikTok rejects unlabelled realistic AI content.</td><td class="tc">0:46 licensed presenters, AI-labelled, no fake reviews</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="dd">
+      <div class="col">
+        <h3><span class="mark ok" aria-hidden="true">✓</span>Where AI ads win</h3>
+        <ul>
+          <li><b>Product-focused ads.</b> In the Ipsos and Syracuse test, AI came closest to human work on straightforward product ads.</li>
+          <li><b>Clicks.</b> AI ads had a 0.76% click rate against 0.65% for human ads in Taboola's study, and fully AI ads got 19% more clicks in an NYU and Emory field test.</li>
+          <li><b>Speed and volume.</b> Many different openings in days, which is what testing needs.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3><span class="mark no" aria-hidden="true">✕</span>Where they lose</h3>
+        <ul>
+          <li><b>Emotion and storytelling.</b> Fully AI remakes of 20 brand ads scored about 14% lower on short-term sales impact and 17% lower on long-term brand equity (Ipsos and Syracuse, 2026).</li>
+          <li><b>Fake people.</b> 62% of US adults call AI people or voices in ads unacceptable even when disclosed (Gallup, May 2026).</li>
+          <li><b>What to tell buyers:</b> AI for product demos, hooks and fast testing. Human creators or real footage for emotional testimonials.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARKET ===================== -->
+<section id="market">
+  <div class="head">
+    <p class="q">The market on Fiverr</p>
+    <h2>A crowd of $5–60 gigs, and an empty band above them</h2>
+    <p>Starting prices of 28 AI video and UGC gigs seen in Fiverr search results in September 2026, next to the packages suggested in <a href="#gig">Gig page</a>. Your Basic package sits where nobody in the sample does.</p>
+  </div>
+  <div class="stack-lg">
+    <div class="stack">
+  <figure class="strip" aria-labelledby="strip-cap">
+    <figcaption id="strip-cap" class="strip-cap"><b>Starting prices of AI video gigs on Fiverr, and yours</b><span>USD, log scale · one dot per gig · hover or tab to a dot for the seller</span></figcaption>
+    <div class="srow">
+      <div class="slab">AI UGC and AI ad gigs<small>26 gigs · median $22.50</small></div>
+      <div class="strack">
+        <span class="sgrid" style="left:3.86%"></span><span class="sgrid" style="left:15.84%"></span><span class="sgrid" style="left:31.68%"></span><span class="sgrid" style="left:43.67%"></span><span class="sgrid" style="left:55.65%"></span><span class="sgrid" style="left:71.50%"></span><span class="sgrid" style="left:83.48%"></span><span class="sgrid" style="left:95.46%"></span><span class="sband" style="left:49.73%;width:14.37%"></span>
+        <span class="band-lab" style="left:56.92%">nobody here</span>
+        <span class="dlab below" style="left:67.64%;top:calc(50% + 9px)">Fiverr Pro</span>
+        <span class="dot" tabindex="0" role="img" aria-label="kartiksoy · from $5" data-tip="kartiksoy · from $5" style="left:3.86%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="jamesdaminyx · from $5" data-tip="jamesdaminyx · from $5" style="left:3.86%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="harris_younus · from $10" data-tip="harris_younus · from $10" style="left:15.84%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="dipzac · from $10" data-tip="dipzac · from $10" style="left:15.84%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="ai_is_great · from $10" data-tip="ai_is_great · from $10" style="left:15.84%;top:67.19%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="feran32 · from $10" data-tip="feran32 · from $10" style="left:15.84%;top:15.62%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="christian_lovet · from $10" data-tip="christian_lovet · from $10" style="left:15.84%;top:84.38%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="yussluv_ai · from $15" data-tip="yussluv_ai · from $15" style="left:22.85%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="sanky_san · from $15" data-tip="sanky_san · from $15" style="left:22.85%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="scott_ruby · from $15" data-tip="scott_ruby · from $15" style="left:22.85%;top:67.19%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="shaffiu_videdit · from $15" data-tip="shaffiu_videdit · from $15" style="left:22.85%;top:15.62%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="hive_skillz · from $20" data-tip="hive_skillz · from $20" style="left:27.83%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="crrafty · from $20" data-tip="crrafty · from $20" style="left:27.83%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="samlalimohamed · from $25" data-tip="samlalimohamed · from $25" style="left:31.68%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="haris180180 · from $25" data-tip="haris180180 · from $25" style="left:31.68%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="sheeezad · from $30" data-tip="sheeezad · from $30" style="left:34.84%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="ai_vid_creat · from $30" data-tip="ai_vid_creat · from $30" style="left:34.84%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="alexpro99 · from $35" data-tip="alexpro99 · from $35" style="left:37.50%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="nicholas_henryy · from $35" data-tip="nicholas_henryy · from $35" style="left:37.50%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="samlarre · from $55" data-tip="samlarre · from $55" style="left:45.32%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="shreeydesigner · from $60" data-tip="shreeydesigner · from $60" style="left:46.82%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="meti98 · from $60" data-tip="meti98 · from $60" style="left:46.82%;top:32.81%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="animategenis · from $60" data-tip="animategenis · from $60" style="left:46.82%;top:67.19%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="kaifmd70045 · from $70" data-tip="kaifmd70045 · from $70" style="left:49.49%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="ivanalexx · from $165" data-tip="ivanalexx · from $165" style="left:64.31%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="stefanvisual (Fiverr Pro) · from $200" data-tip="stefanvisual (Fiverr Pro) · from $200" style="left:67.64%;top:50.00%"></span>
+      </div>
+    </div>
+    <div class="srow">
+      <div class="slab">Human UGC gigs<small>2 gigs, for comparison</small></div>
+      <div class="strack short">
+        <span class="sgrid" style="left:3.86%"></span><span class="sgrid" style="left:15.84%"></span><span class="sgrid" style="left:31.68%"></span><span class="sgrid" style="left:43.67%"></span><span class="sgrid" style="left:55.65%"></span><span class="sgrid" style="left:71.50%"></span><span class="sgrid" style="left:83.48%"></span><span class="sgrid" style="left:95.46%"></span><span class="sband" style="left:49.73%;width:14.37%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="tommcconaghyugc (human creator) · from $170" data-tip="tommcconaghyugc (human creator) · from $170" style="left:64.83%;top:50.00%"></span>
+        <span class="dot" tabindex="0" role="img" aria-label="worldwit (human creator) · from $215" data-tip="worldwit (human creator) · from $215" style="left:68.89%;top:50.00%"></span>
+      </div>
+    </div>
+    <div class="srow">
+      <div class="slab you">Your packages at launch<small>Basic $79 · Standard $249 · Premium $690</small></div>
+      <div class="strack lab">
+        <span class="sgrid" style="left:3.86%"></span><span class="sgrid" style="left:15.84%"></span><span class="sgrid" style="left:31.68%"></span><span class="sgrid" style="left:43.67%"></span><span class="sgrid" style="left:55.65%"></span><span class="sgrid" style="left:71.50%"></span><span class="sgrid" style="left:83.48%"></span><span class="sgrid" style="left:95.46%"></span>
+        <span class="dlab me" style="left:51.58%;top:calc(50% - 9px)">Basic</span><span class="dlab me" style="left:71.43%;top:calc(50% - 9px)">Standard</span><span class="dlab me" style="left:89.05%;top:calc(50% - 9px)">Premium</span>
+        <span class="dot me" tabindex="0" role="img" aria-label="Your Basic · $79 at launch" data-tip="Your Basic · $79 at launch" style="left:51.58%;top:50.00%"></span>
+        <span class="dot me" tabindex="0" role="img" aria-label="Your Standard · $249 at launch" data-tip="Your Standard · $249 at launch" style="left:71.43%;top:50.00%"></span>
+        <span class="dot me" tabindex="0" role="img" aria-label="Your Premium · $690 at launch" data-tip="Your Premium · $690 at launch" style="left:89.05%;top:50.00%"></span>
+      </div>
+    </div>
+    <div class="srow">
+      <div class="slab you">After 5 reviews<small>Basic $99 · Standard $349 · Premium $990</small></div>
+      <div class="strack short">
+        <span class="sgrid" style="left:3.86%"></span><span class="sgrid" style="left:15.84%"></span><span class="sgrid" style="left:31.68%"></span><span class="sgrid" style="left:43.67%"></span><span class="sgrid" style="left:55.65%"></span><span class="sgrid" style="left:71.50%"></span><span class="sgrid" style="left:83.48%"></span><span class="sgrid" style="left:95.46%"></span>
+        
+        <span class="dot me" tabindex="0" role="img" aria-label="Your Basic · $99 after 5 reviews" data-tip="Your Basic · $99 after 5 reviews" style="left:55.48%;top:50.00%"></span>
+        <span class="dot me" tabindex="0" role="img" aria-label="Your Standard · $349 after 5 reviews" data-tip="Your Standard · $349 after 5 reviews" style="left:77.26%;top:50.00%"></span>
+        <span class="dot me" tabindex="0" role="img" aria-label="Your Premium · $990 after 5 reviews" data-tip="Your Premium · $990 after 5 reviews" style="left:95.29%;top:50.00%"></span>
+      </div>
+    </div>
+    <div class="saxis" aria-hidden="true"><span></span><div class="sticks"><span style="left:3.86%">$5</span><span style="left:15.84%">$10</span><span style="left:31.68%">$25</span><span style="left:43.67%">$50</span><span style="left:55.65%">$100</span><span style="left:71.50%">$250</span><span style="left:83.48%">$500</span><span style="left:95.46%">$1,000</span></div></div>
+  </figure>
+  <details class="tv">
+    <summary>Show the prices as a table</summary>
+    <div class="tbl"><table>
+      <thead><tr><th>Gig</th><th>Type</th><th class="n">Starts at</th></tr></thead>
+      <tbody>
+        <tr><td><a href="https://www.fiverr.com/kartiksoy/ai-ugc-video-ads-ai-ugc-video-ai-ugc-ads-arcads-heygen-veo-3">kartiksoy</a></td><td>AI UGC / AI ads</td><td class="n">$5</td></tr>
+        <tr><td><a href="https://www.fiverr.com/jamesdaminyx/create-ai-commercial-videos-trailers-ads-music-clips-with-veo3-google-flow">jamesdaminyx</a></td><td>AI UGC / AI ads</td><td class="n">$5</td></tr>
+        <tr><td><a href="https://www.fiverr.com/harris_younus/do-ai-ugc-ads-ai-ugc-testimonial-ai-ugc-video-ads-realistic-avatar-videos">harris_younus</a></td><td>AI UGC / AI ads</td><td class="n">$10</td></tr>
+        <tr><td><a href="https://www.fiverr.com/dipzac/create-ai-ugc-ai-ugc-ads-ai-ugc-video-ugc-video-for-ai-ads">dipzac</a></td><td>AI UGC / AI ads</td><td class="n">$10</td></tr>
+        <tr><td><a href="https://www.fiverr.com/ai_is_great/ai-spokesperson-avatar-video-lip-sync-talking-head-ai-testimonial-ugc-ai-videos">ai_is_great</a></td><td>AI UGC / AI ads</td><td class="n">$10</td></tr>
+        <tr><td><a href="https://www.fiverr.com/feran32/create-cinematic-4k-ai-skincare-video-ads-beauty-product-videos-that-boost-sale">feran32</a></td><td>AI UGC / AI ads</td><td class="n">$10</td></tr>
+        <tr><td><a href="https://www.fiverr.com/christian_lovet/create-ai-ugc-video-ads-for-gym-fitness-and-workout-brand-promo-videos">christian_lovet</a></td><td>AI UGC / AI ads</td><td class="n">$10</td></tr>
+        <tr><td><a href="https://www.fiverr.com/yussluv_ai/create-realistic-ai-video-commercial-video-ai-product-ads-using-google-veo-3">yussluv_ai</a></td><td>AI UGC / AI ads</td><td class="n">$15</td></tr>
+        <tr><td><a href="https://www.fiverr.com/sanky_san/create-ai-video-ads-ai-product-ads-ai-ugc-ads-ai-ads-ai-commercial-videos">sanky_san</a></td><td>AI UGC / AI ads</td><td class="n">$15</td></tr>
+        <tr><td><a href="https://www.fiverr.com/scott_ruby/ai-ugc-ai-ugc-ads-ai-ugc-video-ads-realistic-ugc-for-social-media-marketing">scott_ruby</a></td><td>AI UGC / AI ads</td><td class="n">$15</td></tr>
+        <tr><td><a href="https://www.fiverr.com/shaffiu_videdit/create-hyper-realistic-google-veo3-video-ads-or-tiktok-reels-using-sora2-veo3">shaffiu_videdit</a></td><td>AI UGC / AI ads</td><td class="n">$15</td></tr>
+        <tr><td><a href="https://www.fiverr.com/hive_skillz/create-realistic-ai-commercial-video-ai-product-ads-ai-animation-veo3-promo-ads">hive_skillz</a></td><td>AI UGC / AI ads</td><td class="n">$20</td></tr>
+        <tr><td><a href="https://www.fiverr.com/crrafty/create-ai-health-supplements-instagram-reels-tiktoks">crrafty</a></td><td>AI UGC / AI ads</td><td class="n">$20</td></tr>
+        <tr><td><a href="https://www.fiverr.com/samlalimohamed/create-eye-catching-ai-ugc-video-for-tiktok-and-instagram">samlalimohamed</a></td><td>AI UGC / AI ads</td><td class="n">$25</td></tr>
+        <tr><td><a href="https://www.fiverr.com/haris180180/create-ai-ugc-ads-ai-video-ads-ai-product-ads-tiktok-facebook-instagram-ads">haris180180</a></td><td>AI UGC / AI ads</td><td class="n">$25</td></tr>
+        <tr><td><a href="https://www.fiverr.com/sheeezad/create-stunning-ai-video-and-ai-animation-using-veo3">sheeezad</a></td><td>AI UGC / AI ads</td><td class="n">$30</td></tr>
+        <tr><td><a href="https://www.fiverr.com/ai_vid_creat/create-ultra-realistic-ai-video-ads-commercial-video-ads-ai-product-ads">ai_vid_creat</a></td><td>AI UGC / AI ads</td><td class="n">$30</td></tr>
+        <tr><td><a href="https://www.fiverr.com/alexpro99/create-fiverr-gig-video-in-24-hours-72ea">alexpro99</a></td><td>AI UGC / AI ads</td><td class="n">$35</td></tr>
+        <tr><td><a href="https://www.fiverr.com/nicholas_henryy/do-creative-ai-horror-videos-ugc-ads-with-veo3-sora-2-youtube">nicholas_henryy</a></td><td>AI UGC / AI ads</td><td class="n">$35</td></tr>
+        <tr><td><a href="https://www.fiverr.com/samlarre/use-sora-ai-kling-runway-luma-higgsfield-ai-to-edit-hyper-realistic-short-video">samlarre</a></td><td>AI UGC / AI ads</td><td class="n">$55</td></tr>
+        <tr><td><a href="https://www.fiverr.com/shreeydesigner/create-eyecatching-tiktok-ads-ugc-tiktok-video-ads-dropshipping-video-ads">shreeydesigner</a></td><td>AI UGC / AI ads</td><td class="n">$60</td></tr>
+        <tr><td><a href="https://www.fiverr.com/meti98/create-ai-ugc-video-ads-for-your-brand-or-product">meti98</a></td><td>AI UGC / AI ads</td><td class="n">$60</td></tr>
+        <tr><td><a href="https://www.fiverr.com/animategenis/realistic-ai-promotional-video-veo-3-video-veo3-ads-ai-commercial-google-veo3">animategenis</a></td><td>AI UGC / AI ads</td><td class="n">$60</td></tr>
+        <tr><td><a href="https://www.fiverr.com/kaifmd70045/convert-image-to-animated-gif-and-video">kaifmd70045</a></td><td>AI UGC / AI ads</td><td class="n">$70</td></tr>
+        <tr><td><a href="https://www.fiverr.com/ivanalexx/produce-a-realistic-promotional-video-ad-for-youtube">ivanalexx</a></td><td>AI UGC / AI ads</td><td class="n">$165</td></tr>
+        <tr><td><a href="https://www.fiverr.com/stefanvisual/create-facebook-and-instagram-ads-that-actually-sell">stefanvisual (Fiverr Pro)</a></td><td>AI UGC / AI ads</td><td class="n">$200</td></tr>
+        <tr><td><a href="https://www.fiverr.com/tommcconaghyugc/create-authentic-ugc-video-content-for-your-product-or-brand">tommcconaghyugc</a></td><td>Human UGC</td><td class="n">$170</td></tr>
+        <tr><td><a href="https://www.fiverr.com/worldwit/create-studio-quality-ugc-videos-as-your-american-presenter">worldwit</a></td><td>Human UGC</td><td class="n">$215</td></tr>
+        <tr class="me"><td>Your Basic</td><td>Suggested</td><td class="n">$79 → $99</td></tr>
+        <tr class="me"><td>Your Standard</td><td>Suggested</td><td class="n">$249 → $349</td></tr>
+        <tr class="me"><td>Your Premium</td><td>Suggested</td><td class="n">$690 → $990</td></tr>
+      </tbody>
+    </table></div>
+  </details>
+    </div>
+
+    <div class="two">
+      <div class="stack">
+        <h3>What the competing gigs have in common</h3>
+        <ul class="prose">
+          <li>The same promises everywhere: realistic, hyper-realistic, 8K, TikTok, 24–48 hours, 20+ languages, and tool names such as Veo 3, Sora 2 and Arcads. Only one title in the sample mentions hooks.</li>
+          <li>Many high-review gigs are older gigs with new titles, so their reviews came from other services.</li>
+          <li>Niche specialists (skincare, fitness, supplements) only exist at about $10.</li>
+          <li>Cheap gigs lose money on good tools. A $10 order pays the seller $8 after Fiverr's 20% fee, less than one Arcads video costs (about $11).</li>
+          <li>At the top, Fiverr launched the AI Video Hub on 23 Mar 2026, a hand-picked list of AI directors such as The Dor Brothers and Billy Boman who sell cinema-quality commercials. That is the tier Velrun belongs in later.</li>
+        </ul>
+      </div>
+      <div class="stack">
+        <h3>Gaps you can own</h3>
+        <ol class="steps">
+          <li><span><b>Hook test packs.</b> One ad with several different openings, in three sizes.</span></li>
+          <li><span><b>Product accuracy.</b> Your real packshot in every shot, and a label check before delivery.</span></li>
+          <li><span><b>Film direction.</b> Every ad scripted and storyboarded first, by a studio with commissioned work.</span></li>
+          <li><span><b>Rules done right.</b> Licensed presenters, AI labels, and no fake testimonials.</span></li>
+          <li><span><b>Checked European languages.</b> German, French, Spanish, Italian and Polish versions, each checked by a native speaker.</span></li>
+          <li><span><b>Monthly plans.</b> Almost nobody sells them; Fiverr Subscriptions make it possible.</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SCRIPT ===================== -->
+<section id="script">
+  <div class="head">
+    <p class="q">The script</p>
+    <h2>Master cut: "None of these ads were filmed"</h2>
+    <p>60 seconds, 16:9. Written for a buyer who sees the first three seconds silently in search, clicks, and watches with sound on the gig page. Burn in captions for every spoken line.</p>
+  </div>
+  <div class="stack-lg">
+    <div class="tlbar" role="img" aria-label="Timeline of the 60-second master cut: hook 0 to 3 seconds, turn 3 to 5, reel 5 to 17, problem 17 to 25, fix 25 to 38, proof 38 to 46, steps 46 to 52, close 52 to 60.">
+      <span class="note"><i aria-hidden="true"></i>0:00–0:03 plays without sound in search results</span>
+      <div class="bar">
+        <span class="hot" style="flex:3"><b>Hook</b></span>
+        <span style="flex:2"></span>
+        <span style="flex:12"><b>Reel</b></span>
+        <span style="flex:8"><b>Problem</b></span>
+        <span style="flex:13"><b>Fix</b></span>
+        <span style="flex:8"><b>Proof</b></span>
+        <span style="flex:6"><b>Steps</b></span>
+        <span style="flex:8"><b>Close</b></span>
+      </div>
+      <div class="ticks" aria-hidden="true"><span style="left:0">0:00</span><span style="left:16.67%">0:10</span><span style="left:33.33%">0:20</span><span style="left:50%">0:30</span><span style="left:66.67%">0:40</span><span style="left:83.33%">0:50</span><span style="left:100%">1:00</span></div>
+      <ol class="beats">
+        <li><b>0:00</b>Hook</li><li><b>0:03</b>Turn</li><li><b>0:05</b>Reel</li><li><b>0:17</b>Problem</li><li><b>0:25</b>Fix</li><li><b>0:38</b>Proof</li><li><b>0:46</b>Steps</li><li><b>0:52</b>Close</li>
+      </ol>
+    </div>
+
+    <div class="tbl xwide"><table>
+      <thead><tr><th>Time</th><th>Picture</th><th>On screen</th><th>Voice and sound</th></tr></thead>
+      <tbody>
+        <tr><td class="tc">0:00–0:03<span>Hook</span></td><td>Full frame. A cold-brew can breaks up through a wall of ice in slow motion, macro, hard side light. The real label is sharp.<small>This frame is your cover image. Design it as a still.</small></td><td><span class="onscreen">None of these ads were filmed.</span></td><td><span class="cue">No voice. One low hit, the music starts.</span></td></tr>
+        <tr><td class="tc">0:03–0:05<span>Turn</span></td><td>Cut to one 9:16 panel in the centre. An AI presenter in a sunny kitchen, phone-camera look, holds the can and looks into the lens.</td><td><span class="onscreen">Not even me.</span><small>Small tag: AI presenter</small></td><td><span class="cue">Presenter:</span> <span class="say-line">"Not even me."</span></td></tr>
+        <tr><td class="tc">0:05–0:17<span>Reel</span></td><td>Three 9:16 panels side by side, each changing on the beat every 1–1.5 seconds, about ten ads in all. The last beat is one full-width shot: a single unbroken camera move through a product world.</td><td>A label above each panel: <span class="onscreen">UGC demo · coffee</span>, <span class="onscreen">Product film · skincare</span>, <span class="onscreen">Podcast ad · pet food</span>, <span class="onscreen">Unboxing · gifts</span>, <span class="onscreen">Skit · snacks</span>, <span class="onscreen">Us vs them · home</span>, <span class="onscreen">Listicle · accessories</span></td><td><span class="cue">From 0:11:</span> <span class="say-line">"Every person, every place, every product shot in these ads was made with AI."</span></td></tr>
+        <tr><td class="tc">0:17–0:25<span>Problem</span></td><td>Three quick examples you make on purpose, each stamped with a red ✕: a warped label, a waxy face, the same opening line three times.</td><td><span class="onscreen">Most AI ads don't sell.</span><small>Then: Looks fake ✕ · Wrong product ✕ · Same idea ✕</small></td><td><span class="say-line">"But most AI ads don't sell. They look fake, get the product wrong, and all say the same thing."</span></td></tr>
+        <tr><td class="tc">0:25–0:38<span>Fix</span></td><td>A storyboard panel wipes into the finished frame (2 s). The client's packshot beside the generated frame, then a freeze on the readable label (3 s). A 3 × 3 grid: one product, nine openings (4 s). A 2 × 2 grid: the same presenter line in English, German, French and Spanish (4 s).</td><td><span class="onscreen">Script and storyboard first</span> → <span class="onscreen">Your real product</span> → <span class="onscreen">1 product · 9 hooks</span> → <span class="onscreen">9:16 · 4:5 · 1:1 · EN DE FR ES</span></td><td><span class="say-line">"So every ad we make starts with a script and a storyboard, uses your real product, and comes with different hooks to test, in every size and language you need."</span></td></tr>
+        <tr><td class="tc">0:38–0:46<span>Proof</span></td><td>The Fresh Forest tavern spot, its funniest beat, 16:9. A view counter climbs to 3.7M, taken from your dated screenshots. Optional 2 s: the Safety &amp; Response rescue shot.</td><td><span class="onscreen">2 AI spots · 3.7M views</span><small>Optional, with written permission: Commissioned by Boston Dynamics</small></td><td><span class="say-line">"Two of our AI spots for a detergent brand passed 3.7 million views."</span></td></tr>
+        <tr><td class="tc">0:46–0:52<span>Steps</span></td><td>Three step cards slide in, then one line of checks underneath.</td><td><span class="onscreen">1 Send your product link · 2 Approve the script · 3 Get ads ready to run</span><small>Commercial use · Licensed AI presenters · AI-labelled · No fake reviews</small></td><td><span class="say-line">"Send your product link. Approve the script. Get ads ready to run."</span></td></tr>
+        <tr><td class="tc">0:52–1:00<span>Close</span></td><td>You on camera at your edit desk, real, natural light, medium close-up. At 0:58 the end card fades in under your last words.</td><td><span class="onscreen">[Your name] · AI ad director</span><small>End card: AI video ads for online brands. Scripts included. · Message me your product link · Made with AI</small></td><td><span class="cue">You, on camera:</span> <span class="say-line">"This part's real. I'm [Name]. Send me your product link, and I'll reply with three ad ideas for it."</span></td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="two">
+      <div class="copy">
+        <div class="hdr"><span>Voice-over to record · about 110 words, 45 s</span><button class="btn" type="button" data-copy="vo-master">Copy text</button></div>
+        <pre id="vo-master">[0:03, AI presenter] Not even me.
+
+[0:11] Every person, every place, every product shot in these ads was made with AI.
+
+[0:17] But most AI ads don't sell. They look fake, get the product wrong, and all say the same thing.
+
+[0:25] So every ad we make starts with a script and a storyboard, uses your real product, and comes with different hooks to test, in every size and language you need.
+
+[0:38] Two of our AI spots for a detergent brand passed 3.7 million views.
+
+[0:46] Send your product link. Approve the script. Get ads ready to run.
+
+[0:52, you on camera] This part's real. I'm [Name]. Send me your product link, and I'll reply with three ad ideas for it.</pre>
+      </div>
+      <div class="stack">
+        <h3>Before you record</h3>
+        <ul class="prose">
+          <li>Check the 3.7M figure against your dated screenshots. Your site draft says 2.8M for the tavern spot alone.</li>
+          <li>No written permission from Fresh Forest yet? Replace the proof beat with your first Fiverr reviews, or with a board-to-frame wipe and the line "Directed by an AI film studio".</li>
+          <li>The Wingwalker film is a Skittles spec. Use it only with every Skittles mark removed, or leave it out.</li>
+          <li>The line "This part's real" works only if the hook says "None of these <em>ads</em>", since your close is filmed.</li>
+          <li>Read at a calm pace. About 110 words in 60 seconds leaves room for the silent hook and the reel.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="stack" id="cut-d">
+      <h3>Cut D · Walkthrough · 70 s · for launch</h3>
+      <p class="small">Same hook, turn and proof as the master. The middle becomes a motion-graphics walkthrough of an order and four quick answers. Real clips stay on screen for the first 13 seconds and behind every answer.</p>
+      <div class="tbl xwide"><table>
+        <thead><tr><th>Time</th><th>Picture</th><th>On screen</th><th>Voice and sound</th></tr></thead>
+        <tbody>
+          <tr><td class="tc">0:00–0:03<span>Hook</span></td><td>The same hero shot as the master: the can breaking up through ice.</td><td><span class="onscreen">None of these ads were filmed.</span></td><td><span class="cue">No voice. One low hit, the music starts.</span></td></tr>
+          <tr><td class="tc">0:03–0:05<span>Turn</span></td><td>The AI presenter in the kitchen, holding the can.</td><td><span class="onscreen">Not even me.</span><small>Small tag: AI presenter</small></td><td><span class="cue">Presenter:</span> <span class="say-line">"Not even me."</span></td></tr>
+          <tr><td class="tc">0:05–0:13<span>Reel</span></td><td>Three 9:16 panels changing on the beat, about six ads.</td><td>Format labels above the panels</td><td><span class="cue">From 0:08:</span> <span class="say-line">"Every person and every product shot here was made with AI."</span></td></tr>
+          <tr><td class="tc">0:13–0:16<span>Into the UI</span></td><td>The three panels slide together into one phone frame on a clean background in your studio colours.</td><td><span class="onscreen">Here's how it works</span></td><td><span class="say-line">"Here's how it works."</span></td></tr>
+          <tr><td class="tc">0:16–0:21<span>Step 1</span></td><td>A simple order form fills itself: product link, three photos dropping in, one line on who buys it.</td><td><span class="onscreen">1 · Send your link + 3 photos</span><small>Takes 2 minutes</small></td><td><span class="say-line">"Send your product link and three photos. It takes two minutes."</span></td></tr>
+          <tr><td class="tc">0:21–0:26<span>Step 2</span></td><td>A script card: the angle, then five hooks lighting up one by one. A cursor clicks Approve.</td><td><span class="onscreen">2 · Approve the script and 5 hooks</span><small>Nothing is made before you approve</small></td><td><span class="say-line">"You get the script and five hooks. Nothing is made until you approve."</span></td></tr>
+          <tr><td class="tc">0:26–0:31<span>Step 3</span></td><td>Storyboard frames flip into finished frames. The real packshot slides in and pins to each one.</td><td><span class="onscreen">3 · Storyboarded around your real product</span></td><td><span class="say-line">"We storyboard every shot around your real product."</span></td></tr>
+          <tr><td class="tc">0:31–0:36<span>Step 4</span></td><td>A delivery folder opens: hook 1 to hook 5 in 9:16, 4:5 and 1:1, captions, AI-labelled versions.</td><td><span class="onscreen">4 · Download ads ready to run</span><small>Day 5</small></td><td><span class="say-line">"On day five, you download ads ready to run, in every size."</span></td></tr>
+          <tr><td class="tc">0:36–0:52<span>4 answers</span></td><td>Four chat-bubble questions, 4 seconds each. Each answer is one big line over a real clip: the presenter close-up, three phones playing ads, a revision tick, the 2 × 2 language grid.</td><td><span class="onscreen">Will it look fake?</span> Short lines, real product shots<br><span class="onscreen">Can I run it as an ad?</span> Yes. Rights and AI labels included<br><span class="onscreen">What if I don't like it?</span> Script approval + 2 revisions<br><span class="onscreen">Other languages?</span> Add them as an extra</td><td><span class="say-line">"Will it look fake? Not with short lines and your real product. Can you run it as an ad? Yes, rights and AI labels included. Don't like it? You get two revisions. Other languages? Add them as an extra."</span></td></tr>
+          <tr><td class="tc">0:52–0:59<span>Proof</span></td><td>The Fresh Forest spot with the view counter, as in the master.</td><td><span class="onscreen">2 AI spots · 3.7M views</span></td><td><span class="say-line">"Two of our AI spots for a detergent brand passed 3.7 million views."</span></td></tr>
+          <tr><td class="tc">0:59–1:10<span>Close</span></td><td>You on camera at your edit desk. The end card fades in at 1:07.</td><td><span class="onscreen">[Your name] · AI ad director</span><small>End card: Message me your product link · Made with AI</small></td><td><span class="cue">You, on camera:</span> <span class="say-line">"This part's real. I'm [Name]. Send me your product link, and I'll reply with three ad ideas for it."</span></td></tr>
+        </tbody>
+      </table></div>
+      <div class="two">
+        <div class="copy">
+          <div class="hdr"><span>Cut D voice-over · about 135 words</span><button class="btn" type="button" data-copy="vo-cut-d">Copy text</button></div>
+          <pre id="vo-cut-d">[0:03, AI presenter] Not even me.
+
+[0:08] Every person and every product shot here was made with AI.
+
+[0:13] Here's how it works.
+
+[0:16] Send your product link and three photos. It takes two minutes.
+
+[0:21] You get the script and five hooks. Nothing is made until you approve.
+
+[0:26] We storyboard every shot around your real product.
+
+[0:31] On day five, you download ads ready to run, in every size.
+
+[0:36] Will it look fake? Not with short lines and your real product. Can you run it as an ad? Yes, rights and AI labels included. Don't like it? You get two revisions. Other languages? Add them as an extra.
+
+[0:52] Two of our AI spots for a detergent brand passed 3.7 million views.
+
+[0:59, you on camera] This part's real. I'm [Name]. Send me your product link, and I'll reply with three ad ideas for it.</pre>
+        </div>
+        <div class="stack">
+          <h3>Rules for the motion graphics</h3>
+          <ul class="prose">
+            <li>Build the interface and the cards in a motion tool such as After Effects, Jitter or Rive. AI video models still garble text, and one broken word undercuts a video that sells quality. Use AI only for the clips inside the frames.</li>
+            <li>Draw your own simple interface in your studio colours. Don't screen-record Fiverr or show its logo or badges, and write "Meta" and "TikTok" as words instead of using their logos.</li>
+            <li>One typeface, two neutrals and one accent, and the same easing on every move. Each card stays up at least two seconds and holds seven words or fewer.</li>
+            <li>The steps must match your packages: the day-5 delivery and five hooks are the Standard package. Change the words if your packages change.</li>
+            <li>Make a 90-second version with every FAQ answer and attach it to your first reply to each message. Fiverr allows one video per gig, so this is where the long version goes.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="stack">
+      <h3>Two more cuts to test and reuse</h3>
+      <div class="two">
+        <div class="tbl"><table>
+          <caption><b>Cut B · "One product, nine ads" · 45 s.</b> For testing against the master, or for a hook-pack gig.</caption>
+          <thead><tr><th>Time</th><th>Picture, text and voice</th></tr></thead>
+          <tbody>
+            <tr><td class="tc">0:00–0:03</td><td>3 × 3 grid of nine ads for one product, all playing. <span class="onscreen">One product. Nine ads.</span></td></tr>
+            <tr><td class="tc">0:03–0:13</td><td>Four of them go full panel for 2.5 s each, with their own sound, labelled by hook type: <span class="onscreen">Relatable</span>, <span class="onscreen">Contrast</span>, <span class="onscreen">Curiosity</span>, <span class="onscreen">Offer first</span>.</td></tr>
+            <tr><td class="tc">0:13–0:21</td><td><span class="say-line">"Meta now treats look-alike ads as one ad, and only about one ad in twenty wins. So you need different ideas to test."</span></td></tr>
+            <tr><td class="tc">0:21–0:33</td><td>What's in a pack, one card each: script and five hooks, AI presenter and product shots, captions, three sizes. <span class="say-line">"Each pack is one idea with five different openings, written, produced and captioned in every size."</span></td></tr>
+            <tr><td class="tc">0:33–0:40</td><td>Proof: the 3.7M-view spot, then your Fiverr reviews once you have them.</td></tr>
+            <tr><td class="tc">0:40–0:45</td><td>You on camera: <span class="say-line">"Send me your product link and I'll suggest three hooks for it."</span> End card.</td></tr>
+          </tbody>
+        </table></div>
+        <div class="tbl"><table>
+          <caption><b>Cut C · "Director's cut" · 45 s, music-led.</b> For a second gig selling cinematic product commercials.</caption>
+          <thead><tr><th>Time</th><th>Picture, text and voice</th></tr></thead>
+          <tbody>
+            <tr><td class="tc">0:00–0:03</td><td>An impossible product shot: a sneaker runs across salt flats that turn to water. <span class="onscreen">We film what can't be filmed.</span></td></tr>
+            <tr><td class="tc">0:03–0:09</td><td>Three storyboard-to-frame wipes. <span class="onscreen">Written. Boarded. Generated.</span></td></tr>
+            <tr><td class="tc">0:09–0:27</td><td>Full-frame product films on the beat: perfume, watch, drink, lamp, sneaker, and one Velrun film shot with no brand marks. Small category labels.</td></tr>
+            <tr><td class="tc">0:27–0:35</td><td>Proof: Fresh Forest, 3.7M views. Boston Dynamics only with written permission.</td></tr>
+            <tr><td class="tc">0:35–0:41</td><td><span class="onscreen">Your product. Any location. No shoot.</span> <span class="say-line">"Storyboard first, finished film in ten days."</span></td></tr>
+            <tr><td class="tc">0:41–0:45</td><td><span class="onscreen">Send me your product and the world you want it in.</span> End card, Made with AI.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="copy">
+        <div class="hdr"><span>Profile intro video · after Level 1 · about 40 s</span><button class="btn" type="button" data-copy="vo-intro">Copy text</button></div>
+        <pre id="vo-intro">Hi, I'm [Name]. I direct AI commercials at [Studio] in Bucharest.
+
+We've made AI films for [client, with permission], and two spots for a detergent brand that passed 3.7 million views.
+
+Here on Fiverr I make video ads for online brands: the script, AI presenters and product shots, with different hooks to test.
+
+Every ad is storyboarded before we generate a frame, and every AI presenter is labelled as AI.
+
+Send me your product link, and I'll reply with three ideas for your ads.</pre>
+      </div>
+      <div class="stack">
+        <h3>Where each cut goes</h3>
+        <dl class="rows">
+          <dt>Cut D, 70 s</dt><dd>Your main gig at launch, while you have no reviews. It answers the questions that stop a first order.</dd>
+          <dt>Master, 60 s</dt><dd>Test it against Cut D once you have five reviews and the reviews carry the trust.</dd>
+          <dt>Cut B, 45 s</dt><dd>A hook-pack gig, or a third test if neither main cut converts.</dd>
+          <dt>Cut C, 45 s</dt><dd>A second gig for cinematic product commercials, once the first has reviews.</dd>
+          <dt>Intro video</dt><dd>Your profile, once you have a level. Fiverr rejects it if you aren't on camera and speaking, or if anyone else appears, so no AI presenters in this one.</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHOTS ===================== -->
+<section id="shots">
+  <div class="head">
+    <p class="q">What to show</p>
+    <h2>The shot list, built on products you invent or own</h2>
+    <p>Generate every shot yourself, for 4–5 brands you invent (name, logo, packshot) or brands that give written permission. Where AI still slips, the fix is in the last column. Tools are as of September 2026. Sora shut down this year, so don't rely on any single model.</p>
+  </div>
+  <div class="stack-lg">
+    <div class="tbl xwide"><table>
+      <thead><tr><th>Shot</th><th>Beat</th><th>Make it with</th><th>Watch for</th></tr></thead>
+      <tbody>
+        <tr><td><b>Hero.</b> Cold-brew can breaks up through ice, slow motion, macro, hard side light.</td><td class="tc">Hook 0:00</td><td>Veo 3.1 on Vertex AI (Google covers IP for unedited output) or Seedance 2.5, started from real product photos.</td><td>Warped label: lay the real packshot over it and keep rotation under about 15°.</td></tr>
+        <tr><td><b>AI presenter</b> in a sunny kitchen, phone-camera look, holding the can: "Not even me."</td><td class="tc">Turn 0:03</td><td>A licensed avatar (HeyGen Avatar V, Arcads) or Kling 3.0 Omni or Veo 3.1 with native audio.</td><td>One short line. Hands on the product. No lookalikes. Tag it "AI presenter".</td></tr>
+        <tr><td><b>UGC demo.</b> The same presenter makes an iced coffee at the counter.</td><td class="tc">Reel</td><td>Same presenter, new scene, from reference images.</td><td>The face changing between scenes.</td></tr>
+        <tr><td><b>Beauty mood.</b> A serum drop falls through water onto botanicals, macro.</td><td class="tc">Reel</td><td>Seedance 2.5 or Wan 3.0.</td><td>No skin results and no claims.</td></tr>
+        <tr><td><b>Pet.</b> A dog catches a treat in slow motion, golden hour.</td><td class="tc">Reel</td><td>Kling 3.0.</td><td>Anatomy. Audiences take AI animals better than AI people.</td></tr>
+        <tr><td><b>Home.</b> A lamp switches on as the room goes from day to night.</td><td class="tc">Reel</td><td>Seedance 2.5, one take.</td><td>Flickering shadows.</td></tr>
+        <tr><td><b>Accessories.</b> A watch on a stone plinth on salt flats, slow orbit.</td><td class="tc">Reel</td><td>Veo 3.1.</td><td>Dial text and reflections: use a real macro plate of the dial.</td></tr>
+        <tr><td><b>Unboxing.</b> Top-down, a gift box opens.</td><td class="tc">Reel</td><td>Any model, with the real product composited in.</td><td>Hands: keep them at the edge of frame.</td></tr>
+        <tr><td><b>Podcast ad.</b> Two hosts at microphones, the product on the table.</td><td class="tc">Reel</td><td>Kling 3.0 Omni (dialogue for several speakers).</td><td>Lip sync: short lines, cut every 3–5 seconds.</td></tr>
+        <tr><td><b>Skit.</b> A roommate eats the last snack; the owner's reaction.</td><td class="tc">Reel</td><td>Seedance 2.x.</td><td>Faces drifting between shots.</td></tr>
+        <tr><td><b>Us vs them.</b> Split screen: tangled cables against the product.</td><td class="tc">Reel</td><td>Any model.</td><td>Never show a real competitor's product.</td></tr>
+        <tr><td><b>Listicle.</b> "3 reasons" with big numbers.</td><td class="tc">Reel</td><td>Numbers and text added in the edit.</td><td>Never let a model render text.</td></tr>
+        <tr><td><b>One-take product world.</b> A 20–30 second camera move with no cut. Show 2–3 seconds of it.</td><td class="tc">Reel end</td><td>Seedance 2.5 or Wan 3.0 (30 seconds in one pass).</td><td>This is the shot that says "2026". Use your best one.</td></tr>
+        <tr><td><b>The three failures,</b> made on purpose: a warped label, a waxy face, one opening repeated.</td><td class="tc">Problem 0:17</td><td>Bad versions of your own shots.</td><td>Never use another seller's work.</td></tr>
+        <tr><td><b>Board to frame,</b> and your packshot beside the generated frame.</td><td class="tc">Fix 0:25</td><td>Your real storyboards.</td><td>Freeze on the readable label.</td></tr>
+        <tr><td><b>Hook grid</b> 3 × 3 and <b>language grid</b> 2 × 2 (EN, DE, FR, ES).</td><td class="tc">Fix 0:30</td><td>HeyGen Avatar V for the languages.</td><td>A native speaker checks each language.</td></tr>
+        <tr><td><b>Fresh Forest spot</b> with a climbing view counter.</td><td class="tc">Proof 0:38</td><td>The graded master and a dated screenshot.</td><td>Written permission from the client.</td></tr>
+        <tr><td><b>You,</b> on camera.</td><td class="tc">Close 0:52</td><td>A real camera, natural light, lapel mic.</td><td>No filters. This shot is the proof that a person is behind the work.</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="dd">
+      <div class="col">
+        <h3><span class="mark ok" aria-hidden="true">✓</span>Show</h3>
+        <ul>
+          <li>Invented brands, or real brands with written permission.</li>
+          <li>Products built from real product photos, with the real packshot laid over the scene.</li>
+          <li>Spoken lines under 8 seconds, with a cut to b-roll every 3–5 seconds.</li>
+          <li>An "AI presenter" tag on every realistic person.</li>
+          <li>Each 9:16 ad whole, inside a vertical panel.</li>
+          <li>"Made with AI" on the end card.</li>
+        </ul>
+      </div>
+      <div class="col">
+        <h3><span class="mark no" aria-hidden="true">✕</span>Leave out</h3>
+        <ul>
+          <li>Other brands' logos or products, and client work without written permission. That includes the Skittles marks on the Wingwalker.</li>
+          <li>Fake reviews, star ratings, "10,000 happy customers", AI before-and-after shots, AI doctors or experts.</li>
+          <li>Celebrity lookalikes, soundalikes, and cloned voices without consent.</li>
+          <li>Prices, links, emails, handles, QR codes and Fiverr badges.</li>
+          <li>"Hollywood quality", "100% realistic", "undetectable", and any sales or ROAS figure you can't document.</li>
+          <li>Tool names on screen. Tools change every quarter.</li>
+          <li>Stock footage. Fiverr counts it as not your own work.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDIT ===================== -->
+<section id="edit">
+  <div class="head">
+    <p class="q">Edit and export</p>
+    <h2>Settings for a clean upload</h2>
+  </div>
+  <dl class="rows">
+    <dt>Canvas</dt><dd>1920 × 1080, 24 fps, landscape. Vertical ads sit in 9:16 panels of about 540 × 960 px, up to three across, with a label above each.</dd>
+    <dt>Text</dt><dd>One line at a time, seven words at most, 64–72 px tall at 1080p, in the middle third. Keep the bottom strip clear, where player controls appear.</dd>
+    <dt>Captions</dt><dd>Burn in every spoken line. Most buyers meet the video without sound first.</dd>
+    <dt>Voice</dt><dd>Record close to the microphone in a quiet, soft room. Sellers report that Fiverr compresses gig audio, so keep the voice dry and forward.</dd>
+    <dt>Mix</dt><dd>About −14 LUFS integrated and −1 dBTP true peak, with the music about 18 dB under the voice.</dd>
+    <dt>Music</dt><dd>Licensed for advertising, from Artlist or Epidemic Sound for example. Keep the license, since Fiverr requires permission for every audio file.</dd>
+    <dt>Export</dt><dd><code>MP4 · H.264 High · 2-pass VBR ≈ 5 Mbps (max 8) · AAC 192 kbps</code> A 60-second file comes out near 40 MB, under Fiverr's 50 MB limit.</dd>
+    <dt>Cover frame</dt><dd>Make the first second a clean still: the hero shot and the hook line, nothing else. After approval, pause on it and click "Set as preview".</dd>
+    <dt>Files</dt><dd><code>fiverr-trailer-master-60-v1.mp4</code>, <code>fiverr-trailer-b-45-v1.mp4</code>, and so on. Note the date you upload each version, so you can compare periods in Fiverr's analytics.</dd>
+  </dl>
+</section>
+
+<!-- ===================== GIG ===================== -->
+<section id="gig">
+  <div class="head">
+    <p class="q">Gig page</p>
+    <h2>Set up the gig around the video</h2>
+    <p>The video only converts the buyers who reach the page. These settings bring them there and make the order easy.</p>
+  </div>
+  <div class="stack-lg">
+    <dl class="rows">
+      <dt>Title</dt><dd><b>I will create AI UGC video ads for your product with a script and 5 hooks</b><br><span class="small">73 of 80 characters. Opens with the search phrase that grew 265%.</span></dd>
+      <dt>Category</dt><dd>Video &amp; Animation › UGC Videos › AI UGC</dd>
+      <dt>Search tags</dt><dd><div class="chips"><span class="chip">ai ugc</span><span class="chip">ai video ads</span><span class="chip">ugc ads</span><span class="chip">product video ads</span><span class="chip">tiktok ads</span></div></dd>
+      <dt>Cover</dt><dd>The designed first frame of the trailer, set after the video is approved.</dd>
+      <dt>Images (3)</dt><dd>1. One product, nine hooks, as a grid. 2. Your packshot beside the generated frame, label readable. 3. What each package includes.</dd>
+      <dt>PDFs (2)</dt><dd>1. A sample script for an invented product: angle, three hooks, voice-over, on-screen text and shot list. It shows the thinking buyers pay for. 2. Your AI and rights policy on one page.</dd>
+    </dl>
+
+    <div class="stack">
+      <h3>Packages</h3>
+      <div class="tiers">
+        <div class="tier">
+          <h3>Hook test</h3>
+          <p class="fit">An easy first order, priced above the $10 crowd</p>
+          <div class="price"><span class="amt">$79</span><span class="per">at launch · $99 after 5 reviews</span></div>
+          <ul>
+            <li>One 10–15 s ad for your product, 9:16</li>
+            <li>Script written for you</li>
+            <li>AI presenter or product-film style</li>
+            <li>Captions, licensed music, commercial use</li>
+            <li>1 revision · 3-day delivery</li>
+          </ul>
+          <div class="inside"><p>You net $63 → $79 after Fiverr's 20%</p><p>About 3 h and $15 of AI credits</p></div>
+        </div>
+        <div class="tier pick">
+          <span class="pill">Most popular</span>
+          <h3>Ad + 5 hooks</h3>
+          <p class="fit">The package most buyers should pick</p>
+          <div class="price"><span class="amt">$249</span><span class="per">at launch · $349 after 5 reviews</span></div>
+          <ul>
+            <li>One concept: a 20–30 s ad with 5 different openings</li>
+            <li>9:16 and 4:5</li>
+            <li>Script and hooks written for you</li>
+            <li>AI presenter plus product shots</li>
+            <li>Captions, licensed music, commercial use</li>
+            <li>2 revisions · 5-day delivery</li>
+          </ul>
+          <div class="inside"><p>You net $199 → $279</p><p>About 7–8 h and $50 of AI credits</p></div>
+        </div>
+        <div class="tier">
+          <h3>Test batch</h3>
+          <p class="fit">The same scope as the Test Batch in your studio plan</p>
+          <div class="price"><span class="amt">$690</span><span class="per">at launch · $990 after 5 reviews</span></div>
+          <ul>
+            <li>Two concepts × 3 hooks = 6 ads</li>
+            <li>Plus one 5–8 s product hero shot</li>
+            <li>9:16, 4:5 and 1:1</li>
+            <li>One extra language, voice-over</li>
+            <li>2 revisions · 7-day delivery</li>
+          </ul>
+          <div class="inside"><p>You net $552 → $792</p><p>About 20 h and $90 of AI credits</p></div>
+        </div>
+      </div>
+      <p class="small">Hours and credit costs come from the D2C AI Video Studio report. At $990 the Test Batch matches your direct price, so Fiverr and direct prices meet once you have reviews. Check competitors' prices again before you publish.</p>
+    </div>
+
+    <div class="two">
+      <div class="tbl"><table>
+        <caption>Gig extras</caption>
+        <thead><tr><th>Extra</th><th class="n">Price</th></tr></thead>
+        <tbody>
+          <tr><td>Extra hook (new opening)</td><td class="n">$30</td></tr>
+          <tr><td>Extra language, voice-over</td><td class="n">$40</td></tr>
+          <tr><td>Extra language, lip-synced presenter</td><td class="n">$80</td></tr>
+          <tr><td>16:9 or 1:1 version</td><td class="n">$20</td></tr>
+          <tr><td>Product hero shot, 5–8 s</td><td class="n">$150</td></tr>
+          <tr><td>Delivery in 48 hours</td><td class="n">+$60</td></tr>
+          <tr><td>Monthly plan with Fiverr Subscriptions, if eligible: the Standard package every month for 3 or 6 months</td><td class="n">10% off from month 2</td></tr>
+        </tbody>
+      </table></div>
+      <div class="copy">
+        <div class="hdr"><span>Gig description · 1,021 of 1,200 characters</span><button class="btn" type="button" data-copy="gig-desc">Copy text</button></div>
+        <pre id="gig-desc">AI video ads for online brands, written and directed by an AI film studio.
+
+Most AI ads don't sell: they look fake, get the product wrong, or repeat one idea. Mine start with a script and a storyboard, use your real product photos, and come with different hooks so you can test what works.
+
+WHAT YOU GET
+- A script and hooks written for your product and customer
+- Licensed AI presenters and cinematic product shots
+- Captions, licensed music, 9:16, 4:5 and 1:1
+- Commercial use for paid and organic ads
+
+WHO IT'S FOR
+Shopify and D2C brands, and agencies that need fresh ads for Meta, TikTok and YouTube every month.
+
+PROOF
+Two of our AI spots for a detergent brand passed 3.7 million views.
+
+HOW I USE AI
+Every presenter is AI and labelled as AI. Presenters show your product; they never pretend to be customers. Customer quotes only from real reviews, with your permission. No celebrity lookalikes, no cloned voices without consent.
+
+Send me your product link before you order and I'll reply with three ad ideas for it.</pre>
+      </div>
+    </div>
+
+    <div class="two">
+      <div class="stack">
+        <h3>FAQ</h3>
+        <div class="faq">
+          <div><b>Will it look like AI?</b><p>The presenters are AI and labelled as AI, but they look and sound natural. Every ad is scripted and storyboarded first, and I cut away before lines get long, which is where AI usually gives itself away.</p></div>
+          <div><b>Will my product look exactly right?</b><p>Yes. I start from your real product photos and lay your real packshot over the scene, so labels and logos stay sharp. Send 3–5 clear photos.</p></div>
+          <div><b>Can the presenter say they used my product?</b><p>No. AI presenters present your product; they don't pretend to be customers. US, UK and EU law forbids fake testimonials. I can show real customer reviews with your permission.</p></div>
+          <div><b>Can I run the ads on Meta, TikTok and YouTube?</b><p>Yes, you get commercial use for paid and organic ads. Switch on each platform's AI label when you upload. I also deliver versions with an on-screen AI note for New York and EU audiences.</p></div>
+          <div><b>Who owns the ads?</b><p>You get the finished ads for commercial use. Stock AI presenters aren't exclusive to you, and raw AI footage may not be protected by copyright, so the license covers the edited ads.</p></div>
+          <div><b>Which tools do you use?</b><p>Veo 3.1, Kling 3.0, Seedance 2.5 and HeyGen, with licensed avatars and voices. The mix changes as models improve.</p></div>
+          <div><b>What counts as a revision?</b><p>Changes to text, timing, music, voice or a shot. A new idea, a new presenter or a new script is a new concept.</p></div>
+          <div><b>Do you offer monthly plans?</b><p>Yes, as a Fiverr subscription or a custom offer: new ads every month, 10% off from the second month.</p></div>
+        </div>
+      </div>
+      <div class="stack">
+        <h3>Questions buyers answer when they order</h3>
+        <ol class="steps">
+          <li><span><b>Product page link.</b></span></li>
+          <li><span><b>3–5 product photos:</b> front, back and a close-up of the label, high resolution.</span></li>
+          <li><span><b>Who buys it, and why,</b> in a sentence or two.</span></li>
+          <li><span><b>Your offer</b> (price, discount, bundle) and the landing page.</span></li>
+          <li><span><b>Claims you want in the ad,</b> and the proof for each.</span></li>
+          <li><span><b>Brand kit:</b> logo, colours, fonts.</span></li>
+          <li><span><b>2–3 ads you like,</b> from any brand.</span></li>
+          <li><span><b>Where the ads will run,</b> and in which countries.</span></li>
+          <li><span><b>Languages.</b></span></li>
+          <li><span><b>Real customer reviews</b> you have permission to quote.</span></li>
+        </ol>
+      </div>
+    </div>
+
+    <div class="box">
+      <p><b>A second gig, once the first has five reviews.</b> "I will direct a cinematic AI commercial for your product, storyboarded first" (76 characters), in Video &amp; Animation › Video Ads &amp; Commercials, with Cut C as its video. Suggested packages: an 8-second hero shot for $290, a 15-second commercial with storyboard for $790, and a 30-second commercial with two cut-downs for $1,490, which matches the $1,500 hero ad in your studio plan.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LAUNCH ===================== -->
+<section id="launch">
+  <div class="head">
+    <p class="q">Launch</p>
+    <h2>The first 30 days, and what to change when the numbers are low</h2>
+  </div>
+  <div class="stack-lg">
+    <ol class="tl">
+      <li><span class="when">Days 1–4</span><p>Make the shots, record the voice-over, cut Cut D (and the master for later), and make the three gallery images and two PDFs. Ask Fresh Forest in writing for permission to show their spot, and Boston Dynamics too if you want to name them.</p></li>
+      <li><span class="when">Day 5</span><p>Publish the gig with the video. The video is reviewed for a few business days while the gig stays live. Once it's approved, set the cover frame.</p></li>
+      <li><span class="when">Days 5–30</span><p>Be online during US and EU business hours. Answer every message within the hour with three ad ideas for the buyer's product, and send a custom offer the same day.</p></li>
+      <li><span class="when">Every week</span><p>Check impressions, clicks and orders in Fiverr's analytics and use the table below. Change one thing at a time and give it two to three weeks.</p></li>
+      <li><span class="when">After 5 reviews</span><p>Raise prices to the second number in each package. Turn on Subscriptions if your account qualifies; Fiverr says they add exposure.</p></li>
+      <li><span class="when">After Level 1</span><p>Record the profile intro video.</p></li>
+      <li><span class="when">Month 3 and on</span><p>Apply to Fiverr Pro with your commissioned work. Fiverr's AI Video Hub is a hand-picked roster, and Fiverr hasn't published how it chooses directors, so Pro vetting is the known way in. Then open the second gig with Cut C.</p></li>
+    </ol>
+
+    <div class="tbl wide"><table>
+      <thead><tr><th>What you see</th><th>What it usually means</th><th>What to change</th></tr></thead>
+      <tbody>
+        <tr><th>Few impressions</th><td>The title, tags or category don't match what buyers search.</td><td>Keep "AI UGC video ads" at the start of the title, check the subcategory, add Subscriptions when eligible.</td></tr>
+        <tr><th>Impressions but few clicks</th><td>The cover frame or the starting price.</td><td>Pick a clearer cover frame, or test a new hook line in the first frame.</td></tr>
+        <tr><th>Clicks but no messages</th><td>The video or the packages don't convince.</td><td>Swap to the other main cut (Cut D or the master) for three to four weeks, make Standard the obvious choice, add the sample-script PDF.</td></tr>
+        <tr><th>Messages but no orders</th><td>Reply speed or reply quality.</td><td>Reply within the hour with three angles and a custom offer.</td></tr>
+        <tr><th>Orders but no repeat work</th><td>No next step after delivery.</td><td>Offer the monthly plan when you deliver, with one new hook idea based on the first ads.</td></tr>
+      </tbody>
+    </table></div>
+
+    <div class="box tint">
+      <p><b>Expect both extremes.</b> Sellers on Fiverr's forum report a first order within a day of publishing, and also 125–200 impressions a day with 7–9 clicks and no orders. Fiverr doesn't publish how it ranks gigs. Seller guides agree that relevance, click rate, conversion, reply speed and buyer satisfaction all count. Never trade discounts for reviews or move buyers off Fiverr; both can cost you the account.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SOURCES ===================== -->
+<section id="sources">
+  <div class="head">
+    <p class="q">Sources</p>
+    <h2>Where the facts come from</h2>
+    <p>Read on 25 Sep 2026. This session couldn't open most pages directly, so most figures come from search summaries of the pages below. Check a figure against its source before it goes on screen.</p>
+  </div>
+  <div class="sources">
+    <div class="srcgrp"><h3>Fiverr rules and programs</h3><ul>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/360010451657-Adding-a-video-to-your-Gig">Fiverr Help: adding a video to your Gig</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/360011421218-Gig-policies">Fiverr Help: requirements and guidelines for your Gig</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/360011263198">Fiverr Help: Video &amp; Animation guidelines</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/37333410852625-UGC-video-service-guidelines">Fiverr Help: UGC video service guidelines</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/34998793899665">Fiverr Help: using AI on Fiverr</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/17240598194321">Fiverr Help: AI services guidelines</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/13703724418961">Fiverr Help: profile intro video</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/33272731177105-Subscription-orders-for-freelancers">Fiverr Help: subscription orders for freelancers</a></li>
+      <li><a href="https://help.fiverr.com/hc/en-us/articles/29453001296913-How-to-become-a-Fiverr-Pro-freelancer">Fiverr Help: how to become a Fiverr Pro freelancer</a></li>
+      <li><a href="https://community.fiverr.com/public/blogs/the-power-of-adding-a-gig-video-to-help-you-stand-out-2025-05-28">Fiverr community blog: the power of a Gig video, May 2025</a></li>
+      <li><a href="https://community.fiverr.com/public/blogs/why-adding-video-could-be-your-most-effective-profile-upgrade-2026-05-18">Fiverr community blog: why adding video, May 2026</a></li>
+      <li><a href="https://community.fiverr.com/public/forum/boards/start-here-c9d/posts/329450-gig-with-videos-are-on-autoplay-not-showing-the-thumbnail">Fiverr forum: gig videos autoplay in search</a></li>
+      <li><a href="https://community.fiverr.com/public/forum/posts/323126-poor-audio-quality-on-my-gig-video-gallery">Fiverr forum: gig video audio quality</a></li>
+      <li><a href="https://community.fiverr.com/forums/topic/338027-lots-of-impressions-and-clicks-but-no-orders-or-messages%E2%80%94help">Fiverr forum: clicks but no orders</a></li>
+      <li><a href="https://fiverrtutorials.com/fiverr-ranking-guide">Fiverr Tutorials: ranking guide (third party)</a></li>
+    </ul></div>
+    <div class="srcgrp"><h3>Fiverr demand and market</h3><ul>
+      <li><a href="https://investors.fiverr.com/news-releases/news-release-details/demand-ai-video-creators-surges-66-businesses-race-scale">Fiverr: demand for AI video creators up 66%, Dec 2025</a></li>
+      <li><a href="https://www.fiverr.com/resources/guides/reports/business-trends-index-june-2026">Fiverr Business Trends Index, June 2026</a></li>
+      <li><a href="https://www.fiverr.com/news/fiverr-ai-video-hub">Fiverr: AI Video Hub launch, 23 Mar 2026</a></li>
+      <li><a href="https://www.hollywoodreporter.com/business/digital/fiverr-ai-video-hub-commercials-1236545651/">The Hollywood Reporter: Fiverr AI Video Hub</a></li>
+      <li><a href="https://www.fiverr.com/categories/video-animation/ugc-videos/ai-ugc">Fiverr: AI UGC subcategory</a></li>
+      <li><a href="https://pro.fiverr.com/freelancers/stefanvisual">Fiverr Pro: stefanvisual</a></li>
+      <li><a href="https://playcut.ai/blog/fiverr-ai-video-gig-playbook/">Playcut: Fiverr AI video gig pricing</a></li>
+      <li><a href="https://dansugc.com/blog/fiverr-ugc-buyer-read-2026">DansUGC: buying UGC on Fiverr, 2026</a></li>
+      <li><a href="https://www.eesel.ai/blog/arcads-ai-pricing">eesel: Arcads pricing</a></li>
+      <li>The 28 competitor gigs are linked in the price table in <a href="#market">Market</a>.</li>
+    </ul></div>
+    <div class="srcgrp"><h3>Buyers and creative</h3><ul>
+      <li><a href="https://motionapp.com/library/research/creative-benchmarks-2026/">Motion: Creative Benchmarks 2026</a></li>
+      <li><a href="https://engineering.fb.com/2024/12/02/production-engineering/meta-andromeda-advantage-automation-next-gen-personalized-ads-retrieval-engine/">Meta Engineering: Andromeda</a></li>
+      <li><a href="https://ads.tiktok.com/business/en/blog/creative-best-practices-top-performing-ads">TikTok: creative best practices</a></li>
+      <li><a href="https://www.askneedle.com/blog/top-ugc-agency">Needle: choosing a UGC agency</a></li>
+      <li><a href="https://billo.app/blog/ugc-rates/">Billo: UGC rates</a></li>
+      <li><a href="https://wistia.com/blog/video-marketing-statistics">Wistia: video engagement benchmarks</a></li>
+      <li><a href="https://news.gallup.com/poll/713222/americans-aren-sold-businesses-using-advertising.aspx">Gallup and Bentley: Americans on AI in ads, May 2026</a></li>
+      <li><a href="https://www.iab.com/insights/the-ai-gap-widens/">IAB: The AI Gap Widens, Jan 2026</a></li>
+      <li><a href="https://news.syr.edu/2026/05/18/newhouse-research-finds-ai-ads-fall-short-on-sales-impact/">Syracuse and Ipsos: AI ads and sales impact, May 2026</a></li>
+      <li><a href="https://hbr.org/2026/09/research-ai-generated-ads-perform-worse-than-human-made-ones-even-when-customers-cant-tell-them-apart">Harvard Business Review on the same study, Sep 2026</a></li>
+      <li><a href="https://www.taboola.com/press-releases/genai-ads-study-2026/">Taboola: generative AI ads study, Jan 2026</a></li>
+      <li><a href="https://www.mi-3.com.au/30-01-2026/ai-generated-ads-outperform-human-ads-click-through-rates-study-finds">Mi3: NYU and Emory field test</a></li>
+      <li><a href="https://phys.org/news/2026-08-ai-ads-succeed.html">University of Mississippi: when AI ads succeed, Aug 2026</a></li>
+      <li><a href="https://www.research-live.com/article/news/effective-creative-principles-remain-the-same-whether-or-not-ads-use-ai-finds-kantar/id/5145503">Research Live: Kantar on AI ads</a></li>
+    </ul></div>
+    <div class="srcgrp"><h3>AI video tools</h3><ul>
+      <li><a href="https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation">OpenAI: Sora discontinuation</a></li>
+      <li><a href="https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5">ByteDance: Seedance 2.5</a></li>
+      <li><a href="https://www.prnewswire.com/news-releases/kling-ai-launches-3-0-model-ushering-in-an-era-where-everyone-can-be-a-director-302679944.html">Kling 3.0 launch</a></li>
+      <li><a href="https://technode.global/2026/08/10/chinas-alibaba-releases-wan3-0-ai-video-model-in-public-beta-with-30s-clips-multimodal-inputs/">TNGlobal: Wan 3.0</a></li>
+      <li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-3-5-videos/">Google: Gemini Omni video</a></li>
+      <li><a href="https://www.heygen.com/blog/announcing-avatar-v">HeyGen: Avatar V</a></li>
+      <li><a href="https://artificialanalysis.ai/video/leaderboard/text-to-video">Artificial Analysis: video arena</a></li>
+      <li><a href="https://domoai.app/blog/ai-product-videos-without-warping-the-product">DomoAI: product videos without warping</a></li>
+    </ul></div>
+    <div class="srcgrp"><h3>Ad platforms and law</h3><ul>
+      <li><a href="https://www.ftc.gov/news-events/news/press-releases/2024/08/federal-trade-commission-announces-final-rule-banning-fake-reviews-testimonials">FTC: rule banning fake reviews and testimonials</a></li>
+      <li><a href="https://www.governor.ny.gov/news/governor-hochul-announces-first-nation-law-requiring-disclosure-when-advertisements-include-ai">New York: synthetic performer disclosure law</a></li>
+      <li><a href="https://artificialintelligenceact.eu/article/50/">EU AI Act, Article 50</a></li>
+      <li><a href="https://ads.tiktok.com/help/article/tiktok-ads-policy-misleading-and-false-content">TikTok ads policy: misleading and false content</a></li>
+      <li><a href="https://www.facebook.com/business/help/1010479435004531">Meta: AI info on ads</a></li>
+      <li><a href="https://support.google.com/adspolicy/answer/17257106">Google Ads: AI labeling requirements, July 2026</a></li>
+      <li><a href="https://www.copyright.gov/ai/Copyright-and-Artificial-Intelligence-Part-2-Copyrightability-Report.pdf">US Copyright Office: copyrightability report</a></li>
+    </ul></div>
+    <div class="srcgrp"><h3>Your earlier work</h3><ul>
+      <li><a href="https://claude.ai/artifact/HBpwjmfGgm4bqETPjS9Yo9">D2C AI Video Studio: plans, costs and rules</a></li>
+      <li><a href="https://claude.ai/artifact/Trj2KD6vBJwkGeLWJjtcZp">Velrun Video Ads Playbook: hooks and claims you can use</a></li>
+    </ul></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="wrap">
+  <p>Researched on 25 Sep 2026 for your Fiverr gig. Prices are starting prices seen in search results and change often. Package hours and AI costs are estimates from the D2C AI Video Studio report. This is research, not legal advice.</p>
+</footer>
+
+<script>
+(function(){
+  var tip=null;
+  function show(el,x,y){
+    if(!tip){tip=document.createElement('div');tip.className='tip';tip.setAttribute('role','tooltip');document.body.appendChild(tip);}
+    tip.textContent=el.getAttribute('data-tip');
+    tip.hidden=false;
+    var r=tip.getBoundingClientRect();
+    var left=Math.min(Math.max(8,x-r.width/2),window.innerWidth-r.width-8);
+    var top=y-r.height-14; if(top<8){top=y+18;}
+    tip.style.left=left+'px'; tip.style.top=top+'px';
+  }
+  function hide(){if(tip){tip.hidden=true;}}
+  document.querySelectorAll('.dot').forEach(function(d){
+    d.addEventListener('pointerenter',function(e){show(d,e.clientX,e.clientY);});
+    d.addEventListener('pointermove',function(e){show(d,e.clientX,e.clientY);});
+    d.addEventListener('pointerleave',hide);
+    d.addEventListener('focus',function(){var r=d.getBoundingClientRect();show(d,r.left+r.width/2,r.top);});
+    d.addEventListener('blur',hide);
+  });
+  window.addEventListener('scroll',hide,{passive:true});
+
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.getAttribute('data-copy'));
+      var text=el.textContent;
+      function done(msg){var o=b.textContent;b.textContent=msg;setTimeout(function(){b.textContent=o;},1600);}
+      function selectIt(){var s=window.getSelection();var rg=document.createRange();rg.selectNodeContents(el);s.removeAllRanges();s.addRange(rg);done('Selected, press copy');}
+      try{
+        if(navigator.clipboard&&navigator.clipboard.writeText){
+          navigator.clipboard.writeText(text).then(function(){done('Copied');},selectIt);
+        }else{selectIt();}
+      }catch(e){selectIt();}
+    });
+  });
+})();
+</script>
